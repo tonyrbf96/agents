@@ -26,9 +26,9 @@ class Robot(BaseRobot):
 
     def is_valid_to_move(self, pos: Position, enviroment: Enviroment):
         if enviroment.is_valid(pos):
-            return all(
+            return not any(
                 [
-                    not (
+                    (
                         issubclass(type(obj), Obstacle)
                         or issubclass(type(obj), BaseRobot)
                         or (
@@ -170,6 +170,11 @@ class ReactiveRobot(Robot):
 
 
 class GoalRobot(ReactiveRobot):
+    def __init__(self, position: Position, factor: int):
+        super().__init__(position)
+        self.baby: "BaseBaby|None" = None
+        self.factor = factor
+
     def update(self, enviroment: Enviroment):
         dirty = calculate_dirty(enviroment)
 
@@ -185,7 +190,7 @@ class GoalRobot(ReactiveRobot):
             self.clean(enviroment)
             return
 
-        if dirty > 25:
+        if dirty > self.factor:
             if self.lookfor_babies(enviroment):
                 return
 

@@ -108,7 +108,7 @@ class Simulation:
         in_corrals = len(
             list(
                 filter(
-                    lambda b: cast(BaseBaby, b).in_corral is not None,
+                    lambda b: cast(BaseBaby, b).in_corral,
                     enviroment.search_by_type([BaseBaby]),
                 )
             )
@@ -168,7 +168,7 @@ class Simulation:
                     for baby in enviroment.search_by_type([BaseBaby])
                 ]
             )
-            and len(enviroment.search_by_type([BaseBaby])) == 0
+            and enviroment.search_by_type([Dirt]) == 0
         )
 
     def update(self, enviroment: Enviroment):
