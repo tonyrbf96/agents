@@ -1,0 +1,100 @@
+RS1 
+wins: 0/30 
+fails: 15/30 
+percents: 28.022263119963793
+
+RS2 
+wins: 0/30 
+fails: 15/30 
+percents: 28.11181853679726
+
+RS3 
+wins: 0/30 
+fails: 4/30 
+percents: 15.722001730948788
+
+RS4 
+wins: 0/30 
+fails: 16/30 
+percents: 31.105954489292134
+
+RS5 
+wins: 0/30 
+fails: 0/30 
+percents: 24.546088888888892
+
+RS6 
+wins: 0/30 
+fails: 0/30 
+percents: 16.284022222222223
+
+RS7 
+wins: 0/30 
+fails: 0/30 
+percents: 8.436377777777778
+
+RS8 
+wins: 0/30 
+fails: 10/30 
+percents: 29.212331922819722
+
+RS9 
+wins: 0/30 
+fails: 1/30 
+percents: 10.365049673202613
+
+RS10 
+wins: 0/30 
+fails: 1/30 
+percents: 11.878719444444446
+
+CS1 
+wins: 0/30 
+fails: 12/30 
+percents: 21.539262458896598
+
+CS2 
+wins: 0/30 
+fails: 15/30 
+percents: 26.313220239020236
+
+CS3 
+wins: 0/30 
+fails: 2/30 
+percents: 11.780964705882353
+
+CS4 
+wins: 0/30 
+fails: 4/30 
+percents: 16.73691926977688
+
+CS5 
+wins: 0/30 
+fails: 3/30 
+percents: 15.293535720643305
+
+CS6 
+wins: 0/30 
+fails: 5/30 
+percents: 14.242910120816004
+
+CS7 
+wins: 0/30 
+fails: 2/30 
+percents: 9.852333333333332
+
+CS8 
+wins: 0/30 
+fails: 8/30 
+percents: 24.773188213004445
+
+CS9 
+wins: 0/30 
+fails: 5/30 
+percents: 3.4902444444444445
+
+CS10 
+wins: 0/30 
+fails: 2/30 
+percents: 11.434175757575757
+

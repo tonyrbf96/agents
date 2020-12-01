@@ -2,17 +2,18 @@ from src.baby import Baby
 from src.robot import GoalRobot, ReactiveRobot, Robot
 from src.simulation import Simulation
 
+handler = open("results.txt", mode="w+")
+
 
 def count(predicade, ls) -> int:
     return len(list(filter(predicade, ls)))
 
 
-def print_simulation(simulations: "list[Simulation]"):
+def print_simulation(simulations: "list[Simulation]", name: str):
     print("RESULTS")
     total = len(simulations)
-    print(f"wins: {count(lambda s: s.victory, simulations)}/{total}")
-    print(f"fails: {count(lambda s: s.fail, simulations)}/{total}")
-
+    wins = f"wins: {count(lambda s: s.victory, simulations)}/{total}"
+    fails = f"fails: {count(lambda s: s.fail, simulations)}/{total}"
     total = 0
     for s in simulations:
         sub_total = 0
@@ -21,7 +22,12 @@ def print_simulation(simulations: "list[Simulation]"):
         sub_total /= len(s.percents)
         total += sub_total
     total /= len(simulations)
-    print(f"percents: {total}")
+    percents = f"percents: {total}"
+
+    lines = [name, wins, fails, percents]
+    handler.write(" \n".join(lines) + "\n\n")
+    handler.flush()
+    print(lines)
 
 
 simulations = []
@@ -348,51 +354,51 @@ simulationsS10C = [
 ]
 
 
-def process_simulations(simulations):
+def process_simulations(simulations, name: str):
     for s, i in zip(simulations, range(len(simulations))):
         s.start_simulation()
-        # print(f"{i+1}/{len(simulations)-1}")
-    print_simulation(simulations)
+        print(f"{i+1}/{len(simulations)-1}")
+    print_simulation(simulations, name)
 
 
 print("RS1:")
-process_simulations(simulationsS1R)
+process_simulations(simulationsS1R, "RS1")
 print("RS2:")
-process_simulations(simulationsS2R)
+process_simulations(simulationsS2R, "RS2")
 print("RS3:")
-process_simulations(simulationsS3R)
+process_simulations(simulationsS3R, "RS3")
 print("RS4:")
-process_simulations(simulationsS4R)
+process_simulations(simulationsS4R, "RS4")
 print("RS5:")
-process_simulations(simulationsS5R)
+process_simulations(simulationsS5R, "RS5")
 print("RS6:")
-process_simulations(simulationsS6R)
+process_simulations(simulationsS6R, "RS6")
 print("RS7:")
-process_simulations(simulationsS7R)
+process_simulations(simulationsS7R, "RS7")
 print("RS8:")
-process_simulations(simulationsS8R)
+process_simulations(simulationsS8R, "RS8")
 print("RS9:")
-process_simulations(simulationsS9R)
+process_simulations(simulationsS9R, "RS9")
 print("RS10:")
-process_simulations(simulationsS10R)
+process_simulations(simulationsS10R, "RS10")
 
 print("CS1:")
-process_simulations(simulationsS1C)
+process_simulations(simulationsS1C, "CS1")
 print("CS2:")
-process_simulations(simulationsS2C)
+process_simulations(simulationsS2C, "CS2")
 print("CS3:")
-process_simulations(simulationsS3C)
+process_simulations(simulationsS3C, "CS3")
 print("CS4:")
-process_simulations(simulationsS4C)
+process_simulations(simulationsS4C, "CS4")
 print("CS5:")
-process_simulations(simulationsS5C)
+process_simulations(simulationsS5C, "CS5")
 print("CS6:")
-process_simulations(simulationsS6C)
+process_simulations(simulationsS6C, "CS6")
 print("CS7:")
-process_simulations(simulationsS7C)
+process_simulations(simulationsS7C, "CS7")
 print("CS8:")
-process_simulations(simulationsS8C)
+process_simulations(simulationsS8C, "CS8")
 print("CS9:")
-process_simulations(simulationsS9C)
+process_simulations(simulationsS9C, "CS9")
 print("CS10:")
-process_simulations(simulationsS10C)
+process_simulations(simulationsS10C, "CS10")
