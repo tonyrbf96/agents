@@ -10,15 +10,8 @@ class EnviromentObject:
 
 
 class Corral(EnviromentObject):
-    def __str__(self):
-        return f"({self.position.x},{self.position.y})"
-
-
-class Obstacle(EnviromentObject):
-    def __str__(self):
-        return f"({self.position.x},{self.position.y})"
+    pass
 
 
 class Dirt(EnviromentObject):
-    def __str__(self):
-        return f"({self.position.x},{self.position.y})"
+    pass
